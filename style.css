@@ -700,8 +700,8 @@ footer nav ul li a:hover{
 }
 
 #grid article img{
-    height: 180px;
-    width: 180px;
+    height: 220px;
+    width: 220px;
     max-width: 100%;
     min-width: 0;
     border-radius: var(--radius-lg);
