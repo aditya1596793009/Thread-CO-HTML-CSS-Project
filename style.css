@@ -79,6 +79,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 20px 20px;
+    z-index: 10;
 }
 
 a{
@@ -223,6 +224,20 @@ main{
     width: 300px;
     border-radius: var(--radius-lg);
     position: relative;
+    animation-name: updown;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes updown{
+    from{
+        transform: translateY(0);
+    }
+
+    to{
+        transform: translateY(10px);
+    }
 }
 
 .right-hero img:hover{
@@ -237,6 +252,20 @@ main{
     border-radius: 50%;
     filter: blur(50px);
     opacity: 0.5;
+    animation-name: glow;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes glow{
+    from{
+        opacity: 0.5;
+    }
+
+    to{
+        opacity: 0.3;
+    }
 }
 
 #cir1{
@@ -278,6 +307,7 @@ main{
     position: relative;
     flex-direction: column;
     display: flex;
+    transition: all 0.2s linear 0s;
 }
 
 .cards article img{
@@ -357,6 +387,11 @@ article:hover{
     border: 1px solid var(--color-primary);
     box-shadow: 0 10px 10px var(--color-primary-glow);
     border-radius: var(--radius-lg);
+    transform: translateY(-8px);
+}
+
+article:hover > img{
+    transform: scale(1.1);
 }
 
 #best{
@@ -617,7 +652,264 @@ footer nav ul li a:hover{
     color: var(--color-primary);
 }
 
+#utube{
+    color: blue;
+}
 
+/* products.html */
 
+#catalogue{
+    padding: 150px 25px 80px;
+}
 
+#catalogue h2{
+    padding: 0;
+    font-size: 3rem;
+    padding-bottom: 20px;
+}
 
+#catalogue p{
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+}
+
+#product-layout{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    /* border: 1px solid red; */
+    background-color: #0C0B12;
+    border-radius: var(--shadow-sm);
+}
+
+#products{
+    /* border: 1px solid green; */
+    margin: 20px;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+}
+
+#products h2{
+    padding: 10px;
+}
+
+#grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr) );
+    gap: 20px;
+}
+
+#grid article img{
+    height: 180px;
+    width: 180px;
+    max-width: 100%;
+    min-width: 0;
+    border-radius: var(--radius-lg);
+    padding: 10px 9px;
+    object-fit: cover;
+    display: block;
+    object-position: top;
+}
+
+#grid article h3{
+    padding: 10px 15px 0;
+    font-size: 1rem;
+}
+
+#grid article p:first-of-type{
+    padding: 0 20px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+}
+
+#grid article p:nth-of-type(2){
+    padding: 20px 20px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+}
+
+#grid article p:nth-of-type(2) s{
+    padding-left: 10px;
+}
+
+#grid article p:nth-of-type(3){
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    border-radius: var(--radius-lg);
+    padding: 5px 10px;
+    background: var(--gradient-accent);
+    color: var(--white);
+    font-weight: 500;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+}
+
+ #grid article > a{
+    color: blue;
+    text-transform: uppercase;
+    text-decoration: underline;
+    padding: 0 15px;
+    font-family: var(--font-display);
+    text-underline-offset: 4px;
+    letter-spacing: 1px;
+}
+
+#grid article > a:hover{
+    color: var(--color-secondary);
+}
+
+#grid article > button{
+    margin: 10px 10px;
+    padding: 5px 10px;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    border: none;
+}
+
+#grid article > button:hover{
+    color: var(--white);
+    background-color: var(--color-primary);
+    cursor: pointer;
+}
+
+#grid article:hover{
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 10px 10px var(--color-primary-glow);
+    border-radius: var(--radius-lg);
+    transform: translateY(-8px);
+}
+
+#grid article:hover > img{
+    transform: scale(1.1);
+    font-weight: 600;
+}
+
+#sidebar{
+    /* border: 1px solid white; */
+    margin: 20px;
+    border-radius: var(--radius-md);
+    background-color: #0E1218;
+    padding: 30px;
+    position: sticky;
+}
+
+#sidebar h2{
+    font-size: 1em;
+    letter-spacing: 1px;
+    color: var(--color-primary);
+    padding: 30px 0px 10px;
+    border-bottom: 1px solid var(--color-surface-muted);
+}
+
+#sidebar h3{
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 20px 0px 10px;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+}
+
+#sidebar label{
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+}
+
+#sidebar ul li{
+    padding: 10px 0;
+}
+
+#price-min{
+    padding: 5px 5px;
+    background-color: var(--color-surface-muted);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: white;
+}
+
+#price-min::placeholder{
+    padding: 5px;
+}
+
+#price-max{
+    padding: 5px 5px;
+    background-color: var(--color-surface-muted);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: white;
+}
+
+#price-max::placeholder{
+    padding: 5px;
+}
+
+#sidebar select{
+    padding: 8px 5px;
+    background-color: var(--color-surface-muted);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: white;
+    width: 170px;
+}
+
+#sidebar button{
+    display: block;
+    padding: 5px;
+    width: 170px;
+    border-radius: var(--radius-sm);
+    border: none;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-weight: 600;
+    width:170px;
+}
+
+#clr{
+    background-color: rgba(255, 255, 255, 0.07);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.07)
+}
+
+#products h2{
+    font-size: 1.3rem;
+    color: var(--color-text-muted);
+}
+
+#best-sellers{
+    margin-right: 30px;
+    margin: 40px 0 100px;
+}
+
+#best-sellers p{
+    margin-left: 30px;
+    margin-top: 10px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+}
+
+#best-sellers table tr:first-child th{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+#best-sellers table tr:nth-of-type(2) th{
+    color: white;
+}
+
+#best-sellers table,tr,th,td{
+    border-collapse: collapse;
+}
+
+#best-sellers table tr th{
+    color: var(--color-accent);
+}
+
+#best-sellers table:hover #mstk{
+    color: white;
+}
